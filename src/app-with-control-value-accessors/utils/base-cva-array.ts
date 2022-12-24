@@ -3,6 +3,7 @@ import { ControlValueAccessor, FormArray, FormControl, ValidationErrors, Validat
 import { Subject, takeUntil } from 'rxjs';
 
 @Directive()
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export abstract class BaseCvaArray<Entity extends Record<string, any>> implements ControlValueAccessor, Validator, OnDestroy {
 
   protected formArray: FormArray<FormControl<Entity>>;
@@ -35,28 +36,28 @@ export abstract class BaseCvaArray<Entity extends Record<string, any>> implement
     this.formArray.push(this.getNewFormControl(this.defaultEntity));
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
 
-  writeValue(entities: Array<Entity>): void {
+  public writeValue(entities: Array<Entity>): void {
     this.formArray = this.getNewFormArray(entities);
   }
 
-  registerOnChange(fn: (_: Array<Entity>) => void): void {
+  public registerOnChange(fn: (_: Array<Entity>) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: () => void): void {
+  public registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
-  registerOnValidatorChange(fn: () => void): void {
+  public registerOnValidatorChange(fn: () => void): void {
     this.onValidatorChange = fn;
   }
 
-  setDisabledState(isDisabled: boolean): void {
+  public setDisabledState(isDisabled: boolean): void {
     if (isDisabled) {
       this.formArray.disable();
     }
@@ -65,7 +66,7 @@ export abstract class BaseCvaArray<Entity extends Record<string, any>> implement
     }
   }
 
-  validate(): ValidationErrors | null {
+  public validate(): ValidationErrors | null {
     return this.formArray.valid ? null : { errors: this.formArray.errors };
   }
 

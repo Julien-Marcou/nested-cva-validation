@@ -9,6 +9,7 @@ type EntityControls<Entity> = {
 type EntityFromGroup<Entity> = FormGroup<EntityControls<Entity>>;
 
 @Directive()
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export abstract class BaseCvaGroup<Entity extends Record<string, any>> implements ControlValueAccessor, Validator, OnDestroy {
 
   protected formGroup: EntityFromGroup<Entity>;
@@ -24,28 +25,28 @@ export abstract class BaseCvaGroup<Entity extends Record<string, any>> implement
     });
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
 
-  writeValue(entity: Entity): void {
+  public writeValue(entity: Entity): void {
     this.formGroup.setValue(entity);
   }
 
-  registerOnChange(fn: (_: Entity) => void): void {
+  public registerOnChange(fn: (_: Entity) => void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: () => void): void {
+  public registerOnTouched(fn: () => void): void {
     this.onTouched = fn;
   }
 
-  registerOnValidatorChange(fn: () => void): void {
+  public registerOnValidatorChange(fn: () => void): void {
     this.onValidatorChange = fn;
   }
 
-  setDisabledState(isDisabled: boolean): void {
+  public setDisabledState(isDisabled: boolean): void {
     if (isDisabled) {
       this.formGroup.disable();
     }
@@ -54,7 +55,7 @@ export abstract class BaseCvaGroup<Entity extends Record<string, any>> implement
     }
   }
 
-  validate(): ValidationErrors | null {
+  public validate(): ValidationErrors | null {
     return this.formGroup.valid ? null : { errors: this.formGroup.errors };
   }
 

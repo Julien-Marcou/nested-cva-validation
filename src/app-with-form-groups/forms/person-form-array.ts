@@ -12,7 +12,7 @@ export class PersonFormArray extends FormArray<PersonFormGroup> {
     return new PersonFormGroup(person);
   }
 
-  pushNew(person?: Person): void {
-    this.push(this.getNewPersonFormGroup(person))
+  public pushNew(person?: Person): void {
+    this.push(this.getNewPersonFormGroup(person));
   }
 }

@@ -9,6 +9,6 @@ import { PersonFormArray } from '../../forms/person-form-array';
 })
 export class PersonFormArrayComponent {
 
-  @Input() formArray!: PersonFormArray;
+  @Input() public formArray!: PersonFormArray;
 
 }

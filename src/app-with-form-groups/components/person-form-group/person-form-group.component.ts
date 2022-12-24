@@ -9,6 +9,6 @@ import { PersonFormGroup } from '../../forms/person-form-group';
 })
 export class PersonFormGroupComponent {
 
-  @Input() formGroup!: PersonFormGroup;
+  @Input() public formGroup!: PersonFormGroup;
 
 }
