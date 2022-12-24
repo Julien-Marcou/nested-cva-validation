@@ -1,0 +1,5 @@
+<div class="person" *ngFor="let person of formArray.controls; let i = index">
+  <app-person-form-group [formGroup]="person"></app-person-form-group>
+  <button (click)="formArray.removeAt(i)">Delete</button>
+</div>
+<button (click)="formArray.pushNew()">Add a new Person</button>
