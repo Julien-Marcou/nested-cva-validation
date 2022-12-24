@@ -1,0 +1,4 @@
+<form [formGroup]="formGroup">
+  <app-person-list-cva class="person-list" [formControl]="formGroup.controls.personList"></app-person-list-cva>
+  <button type="submit" [disabled]="formGroup.invalid">Submit</button> Form is {{ formGroup.valid ? 'valid' : 'invalid' }}
+</form>

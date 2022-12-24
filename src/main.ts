@@ -1,6 +1,8 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { AppModule } from './app/app.module';
+// Comment one line and uncomment the other one to switch from CVA to FormGroups
+import { AppModule } from './app-with-form-groups/app.module';
+// import { AppModule } from './app-with-control-value-accessors/app.module';
 
 
 platformBrowserDynamic().bootstrapModule(AppModule)
