@@ -1,2 +1,8 @@
-<input [formControl]="formGroup.controls.firstname" placeholder="Firstname">
-<input [formControl]="formGroup.controls.lastname" placeholder="Lastname">
+<div>
+  <input [formControl]="formGroup.controls.firstname" placeholder="Firstname*" appMarkAllAsTouched>
+  <span *ngIf="formGroup.controls.firstname.touched && formGroup.controls.firstname.errors">Required</span>
+</div>
+<div>
+  <input [formControl]="formGroup.controls.lastname" placeholder="Lastname*" appMarkAllAsTouched>
+  <span *ngIf="formGroup.controls.lastname.touched && formGroup.controls.lastname.errors">Required</span>
+</div>

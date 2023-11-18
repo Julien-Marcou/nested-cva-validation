@@ -1,0 +1,7 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <app-person-list-cva class="person-list" [formControl]="formGroup.controls.personList" appMarkAllAsTouched></app-person-list-cva>
+  <button type="submit" class="submit-button">Submit</button>
+  <div>
+    Valid: {{ formGroup.valid | json }}
+  </div>
+</form>

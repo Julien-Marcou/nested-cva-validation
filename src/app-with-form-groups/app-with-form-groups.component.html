@@ -1,0 +1,7 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <app-person-form-array class="person-list" [formArray]="formGroup.controls.personList"></app-person-form-array>
+  <button type="submit" class="submit-button">Submit</button>
+  <div>
+    Valid: {{ formGroup.valid | json }}
+  </div>
+</form>

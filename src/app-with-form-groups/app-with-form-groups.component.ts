@@ -1,15 +1,23 @@
+import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { PersonFormArrayComponent } from './components/person-form-array/person-form-array.component';
 import { PersonFormArray } from './forms/person-form-array';
 import { Person } from './models/person';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  selector: 'app-with-form-groups',
+  templateUrl: './app-with-form-groups.component.html',
+  styleUrls: ['./app-with-form-groups.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [
+    ReactiveFormsModule,
+    JsonPipe,
+    PersonFormArrayComponent,
+  ],
 })
-export class AppComponent {
+export class AppWithFormGroupComponent {
 
   protected personList: Array<Person> = [
     { firstname: 'John', lastname: 'Doe' },
@@ -25,6 +33,10 @@ export class AppComponent {
     this.formGroup.valueChanges.subscribe((value) => {
       console.log(value);
     });
+  }
+
+  protected onSubmit(): void {
+    this.formGroup.markAllAsTouched();
   }
 
 }
