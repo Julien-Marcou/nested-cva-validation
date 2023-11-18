@@ -32,7 +32,16 @@
         "import/order": [
           "warn",
           {
-            "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+            "groups": [
+              "builtin",
+              "external",
+              "internal",
+              "parent",
+              "sibling",
+              "index",
+              "object",
+              "type"
+            ],
             "newlines-between": "never",
             "alphabetize": {
               "order": "asc"
@@ -46,7 +55,10 @@
           }
         ],
         "no-unused-vars": "off",
-        "object-shorthand": ["warn", "never"],
+        "object-shorthand": [
+          "warn",
+          "never"
+        ],
         "quotes": "off",
         "semi": "off",
         "space-before-function-paren": "off",
@@ -73,8 +85,14 @@
           }
         ],
         "@typescript-eslint/await-thenable": "warn",
-        "@typescript-eslint/brace-style": ["warn", "stroustrup"],
-        "@typescript-eslint/comma-dangle": ["warn", "always-multiline"],
+        "@typescript-eslint/brace-style": [
+          "warn",
+          "stroustrup"
+        ],
+        "@typescript-eslint/comma-dangle": [
+          "warn",
+          "always-multiline"
+        ],
         "@typescript-eslint/dot-notation": "warn",
         "@typescript-eslint/explicit-function-return-type": "warn",
         "@typescript-eslint/explicit-member-accessibility": [
@@ -101,8 +119,14 @@
             "argsIgnorePattern": "^_"
           }
         ],
-        "@typescript-eslint/quotes": ["error", "single"],
-        "@typescript-eslint/semi": ["error", "always"],
+        "@typescript-eslint/quotes": [
+          "error",
+          "single"
+        ],
+        "@typescript-eslint/semi": [
+          "error",
+          "always"
+        ],
         "@typescript-eslint/space-before-function-paren": [
           "warn",
           {
