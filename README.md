@@ -2,12 +2,20 @@
 
 Reproduction repository for https://github.com/angular/angular/issues/42815
 
+## Get started
+
+- `npm install`
+- `ng serve`
+- open your browser on http://localhost:4200/
+
 ## Description
 
-When you'll start the application you'll see both FormGroups and nested CVA on the same page, to see the difference beetwen the two implementations.
+When you'll open the application you'll see both FormGroups and nested CVA on the same page, to see the difference beetwen the two implementations.
 
 Actually, the only difference you will see, is that the "validation" bug is only present for nested CVA.
 The form with nested CVA is marked as "valid" even though is should not be, as there is some required fields that are not filled.
+
+You can submit the form to highlight the invalid fields for both implementations.
 
 ## CVA vs FormGroups
 
@@ -18,7 +26,7 @@ Here are some stats regarding the TypeScript files:
 | File Count           |   7 |          7 |
 | Line Count (code)    | 254 |        122 |
 | Line Count (total)   | 310 |        151 |
-| Main chunk size (kB) | 152 |        150 |
+| Main Chunk Size (kB) | 152 |        150 |
 
 ## Should I use FormGroups?
 
